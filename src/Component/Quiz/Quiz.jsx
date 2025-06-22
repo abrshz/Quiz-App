@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import question from "../../assets/Data/questions"
 import quizCompleted from "../../assets/Image/quiz-complete.png"
 import Question from '../Question/Question';
+import questions from '../../assets/Data/questions';
 
 
 function Quiz() {
@@ -9,7 +9,7 @@ function Quiz() {
     const [userAnswers, setUserAnswers] = useState([]);
     const activeQuestionIndex =  userAnswers.length;  
 
-    const quizIsComplete = activeQuestionIndex === question.length;
+    const quizIsComplete = activeQuestionIndex === questions.length;
 
     const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer) {
         setUserAnswers((preUserAnswers)=>{
